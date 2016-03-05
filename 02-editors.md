@@ -31,7 +31,7 @@ Both Emacs and vim have built-in interactive tutorials that you can try.
 
 What terminal editor will you use? How did you make your decision?
 
-I'm going to use vim because 1) the tutorials seem straightforward and 2) vim is the default on a lot of systems. Having said that, I'm open to trying the other terminal editors. I also use Sublime.
+I'm going to use vim because 1) the tutorials seem straightforward, 2) I can use vim with Sublime, and 3) vim is the default on a lot of systems. Having said that, I'm open to trying the other terminal editors.
 
 ---
 
