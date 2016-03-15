@@ -37,7 +37,7 @@ import sklearn
 
 Did you install Python 2 or 3? Why? How can you check the version of Python installed if you happen to be on an unfamiliar computer?
 
-```**I installed Python 2, which I confirmed by typing "python --version" in the terminal**```
+```I installed Python 2, which I confirmed by typing "python --version" in the terminal```
 
 From the terminal, the command python --version reveals the version of python installed using the Anaconda installer package. [Continuum](https://www.continuum.io/content/python-3-support-anaconda) documentation also indicates that the default python installation is for Python 2, and provides instructions if the user wishes to also install Python 3. Finally, in the bin folder of the anaconda directory there are packages for python2, python2.7, etc. but nothing for python3, python3.3 etc.
 
