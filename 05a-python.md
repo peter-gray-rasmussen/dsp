@@ -4,6 +4,10 @@ Read Allen Downey's [Think Python](http://www.greenteapress.com/thinkpython/) fo
 
 <a href="http://www.greenteapress.com/thinkpython/"><img src="img/think_python.png" style="width: 100px;" target="_blank"></a>
 
+```
+Done
+```
+
 For quick and easy interactive practice with Python, many people enjoy [Codecademy's Python track](http://www.codecademy.com/en/tracks/python). There's also [Learn Python The Hard Way](http://learnpythonthehardway.org/book/) and [The Python Tutorial](https://docs.python.org/2/tutorial/).
 
 ---
@@ -12,7 +16,12 @@ For quick and easy interactive practice with Python, many people enjoy [Codecade
 
 How are Python lists and tuples similar and different? Which will work as keys in dictionaries? Why?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+```
+Key similarities: Values of lists and tuples can be of any type and are indexed by integers
+Key differences: Lists are mutable but tuples are immutable and you can use tuples as keys in dictionaries but not lists
+
+You can't use lists as keys in dictionaries because lists are not hashable.
+```
 
 ---
 
@@ -20,7 +29,10 @@ How are Python lists and tuples similar and different? Which will work as keys i
 
 How are Python lists and sets similar and different? Give examples of using both. How does performance compare between lists and sets for finding an element. Why?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+```
+["Set is an unordered collection of unique and immutable objects"] (http://www.python-course.eu/sets_frozensets.php)
+Lists, however, are mutable and can contain redundant elements.
+```
 
 ---
 
@@ -28,7 +40,24 @@ How are Python lists and sets similar and different? Give examples of using both
 
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+```
+Python's lambda:
+*Is a tool for building functions
+*Enables creation of anonymous functions on the fly
+*Not neccessary but makes coding easier
+
+For example, the following sorts the tuples by the third key in ascending order: 
+
+student_tuples = [
+        ('john', 'A', 15),
+        ('jane', 'B', 12),
+        ('dave', 'B', 10),
+]
+
+student_tuples = sorted(student_tuples, key=lambda student: student[2]) # sort by age
+print student_tuples
+
+```
 
 ---
 
