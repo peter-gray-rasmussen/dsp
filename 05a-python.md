@@ -127,22 +127,35 @@ date_stop = '14-Jul-2015'
 
 Place code in this file: [q5_datetime.py](python/q5_datetime.py)
 
+```
+Done
+```
+
 ---
 
 ###Q6. Strings
 Edit the 7 functions in [q6_strings.py](python/q6_strings.py)
+
+```
+Done
+```
 
 ---
 
 ###Q7. Lists
 Edit the 5 functions in [q7_lists.py](python/q7_lists.py)
 
+```
+Done
+```
 ---
 
 ###Q8. Parsing
 Edit the 3 functions in [q8_parsing.py](python/q8_parsing.py)
 
-
+```
+Done
+```
 
 
 
