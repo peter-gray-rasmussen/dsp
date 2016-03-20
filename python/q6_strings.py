@@ -1,3 +1,6 @@
+import urllib
+import re
+
 # Based on materials copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
 
@@ -18,8 +21,15 @@ def donuts(count):
     >>> donuts(99)
     'Number of donuts: many'
     """
+    if count < 1:
+        return "Pick a bigger number"
+    elif count < 10:
+        return "Number of donuts: %s" % count
+    return "Many"
     raise NotImplementedError
 
+count = 10
+print donuts(count)
 
 def both_ends(s):
     """
@@ -37,8 +47,12 @@ def both_ends(s):
     >>> both_ends('xyz')
     'xyyz'
     """
+    if len(s) <= 2:
+        return ""
+    return s[:2]  + s[-2:]
     raise NotImplementedError
 
+print both_ends("Hobgoblin")
 
 def fix_start(s):
     """
@@ -56,8 +70,12 @@ def fix_start(s):
     >>> fix_start('donut')
     'donut'
     """
+    firstchar = s[0]
+    modifiedstr = s[1:].replace(firstchar, "*")
+    return firstchar + modifiedstr
     raise NotImplementedError
 
+print fix_start("gargoyle")
 
 def mix_up(a, b):
     """
@@ -74,8 +92,14 @@ def mix_up(a, b):
     >>> mix_up('pezzy', 'firm')
     'fizzy perm'
     """
+    a_char_begin =  a[:2]
+    a_char_end = a[2:]
+    b_char_begin = b[:2]
+    b_char_end = b[2:]
+    return b_char_begin + a_char_end + " " + a_char_begin + b_char_end
     raise NotImplementedError
 
+print mix_up('bear', 'apple')
 
 def verbing(s):
     """
@@ -91,8 +115,16 @@ def verbing(s):
     >>> verbing('do')
     'do'
     """
+    if len(s) <3:
+        return s
+    elif s[-3:] == "ing":
+        return s + "ly"
+    return s + "ing"
     raise NotImplementedError
 
+print verbing("Sparkling")
+print verbing("id")
+print verbing("Torque")
 
 def not_bad(s):
     """
@@ -111,8 +143,15 @@ def not_bad(s):
     >>> not_bad("It's bad yet not")
     "It's bad yet not"
     """
+    pattern = 'not (.*) bad'
+    the_string = re.sub(pattern, 'good', s) 
+    return the_string
     raise NotImplementedError
 
+print not_bad("This is movie is not so bad")
+print not_bad('This dinner is not that bad!')
+print not_bad('This tea is not hot')
+print not_bad("It's bad yet not")
 
 def front_back(a, b):
     """
@@ -130,4 +169,24 @@ def front_back(a, b):
     >>> front_back('Kitten', 'Donut')
     'KitDontenut'
     """
+    a_len = len(a)
+    b_len = len(b)
+
+    if a_len % 2 == 0:
+        a_front = a[:a_len/2]
+        a_back = a[a_len/2:]
+    else:
+        a_front = a[:a_len/2+1]
+        a_back = a[a_len/2+1:]
+    if b_len % 2 == 0:
+        b_front = b[:b_len/2]
+        b_back = b[b_len/2:]
+    else:
+        b_front = b[:b_len/2+1]
+        b_back = b[b_len/2+1:]
+    return a_front + b_front + a_back + b_back
     raise NotImplementedError
+
+print front_back('abcd', 'xy')
+print front_back('abcde', 'xyz')
+print front_back('Kitten', 'Donut')
