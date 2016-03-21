@@ -91,8 +91,61 @@ print count_d2
 # Q3 code
 
 # Extract emails as a list
+print 40 * '*'
 l3 = df['email'].values.tolist()
+print 'The answer to question 3 is below:'
 print l3
 
+# Q4 code
+
+# Extract emails into a series
+s4 = pd.Series(df['email'])
+
+# Remove any leading or trailing spaces
+s4 = s4.str.lstrip().str.rstrip()
+
+# Remove text up to and including @
+
+s4 = s4.replace(to_replace='(.*)@', value='', regex=True)
+
+# Get unique domains
+s4_uni = s4.unique().tolist()
+# Convert back to data frame
+s4 = s4.to_frame('email')
+
+s4 = s4.groupby('email')
+s4_hist = s4['email'].count()
+s4_types = len(s4_hist)
+# Number of unique domains
+s4_uni_dom = len(s4)
+print 40 * '*'
+print 'The answers to question 4 are below:'
+print 'There are %s unique domains and the list of them is below:\n%s' % (s4_uni_dom, s4_uni)
+
+# Q5 code
+
+# Extract emails into a csv file
+print 40 * '*'
+df['email'].to_csv('emails.csv',sep=',', index = False, encoding='utf-8')
+print 'Answer printed to emails.csv'
+
+# Q6 code
+
+#df6 = df['name'].str.split().str[-1]
+#df6.columns = ['foo', 'lname']
+
+#df.append(df6['lname'])
+#print df6
+# Create series from name
+#s6 = pd.Series(df['name'])
+
+# Extract last names
+#s6 = s6.str.rsplit(None, 1)[-1]
+#print s6
+
+#df['last_name'] = df['name'].replace(to_replace=' .$', value
+
+
+# Create a dictionary with last name as key
 
 
