@@ -73,7 +73,7 @@ bryanma@upenn.edu
 ```
 
 ```
-See code in advanced_python_regex.py and emails in emails.csv
+See code in advanced_python_csv.py and emails in emails.csv
 ```
 
 ---
