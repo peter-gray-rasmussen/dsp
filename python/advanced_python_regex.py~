@@ -122,30 +122,3 @@ print 40 * '*'
 print 'The answers to question 4 are below:'
 print 'There are %s unique domains and the list of them is below:\n%s' % (s4_uni_dom, s4_uni)
 
-# Q5 code
-
-# Extract emails into a csv file
-print 40 * '*'
-df['email'].to_csv('emails.csv',sep=',', index = False, encoding='utf-8')
-print 'Answer printed to emails.csv'
-
-# Q6 code
-
-#df6 = df['name'].str.split().str[-1]
-#df6.columns = ['foo', 'lname']
-
-#df.append(df6['lname'])
-#print df6
-# Create series from name
-#s6 = pd.Series(df['name'])
-
-# Extract last names
-#s6 = s6.str.rsplit(None, 1)[-1]
-#print s6
-
-#df['last_name'] = df['name'].replace(to_replace=' .$', value
-
-
-# Create a dictionary with last name as key
-
-
