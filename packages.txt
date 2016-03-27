@@ -1,7 +1,0 @@
-beautifulsoup4==4.4.1
-GDAL==1.11.1
-lxml==3.5.0
-protobuf==2.6.1
-singledispatch==3.4.0.3
-virtualenv==13.1.2
-wheel==0.26.0
