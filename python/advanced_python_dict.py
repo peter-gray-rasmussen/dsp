@@ -6,6 +6,9 @@ import pandas as pd
 from pandas import DataFrame, read_csv
 import numpy as np
 from collections import Counter
+import re
+from collections import defaultdict
+import csv
 
 # Question 6
 
@@ -32,27 +35,37 @@ print 'Li: %s' % name_2
 print 'Bilker: %s' % name_3
 
 print type(name_1)
-
+print '*' * 20
 # Question 7: key is a tuple with first and last name
 
-# Read CSV
-df7 = pd.read_csv('faculty.csv')
+faculty_dict = defaultdict(list)
+professor_dict = defaultdict(list)
 
-# Clean up column names
-df7.columns = df7.columns.str.strip()
+with open('faculty.csv','r') as f:
+  reader = csv.reader(f)
+  reader.next() # skip header row
+  for row in reader:
+    name = row[0]
+    match = re.search(r'(.*)\s([\w.-]+)$',name)
+    first = match.group(1)
+    last = match.group(2)
 
-# Extract first names
-for i in range(len(df7)['name']):
-    x=df7['name'][i].split(' ')
-    t=(x[0], x[-1])
-    df7['name'][i]=t
+    degree = row[1]
 
+    title = row[2]
+    proper_title = re.search(r'[\w\s]*Professor',title).group()
 
+    email = row[3]
 
-#df7['fnames'] = df7['name'].str.rsplit(' ', 1)[0]
+    faculty_dict[last].append([degree, proper_title, email])
+    professor_dict[(first, last)] = [degree, proper_title, email]
+print professor_dict
 
-#test = 'Python: I fucking love this shit'
-#new = test.rsplit(' ', 1)[0]
+print '*' * 20
+# Q8
 
-#print new
+# print by last name order
+sorted_keys = sorted(professor_dict.keys(), key = lambda x:x[-1])
+for key in sorted_keys:
+  print key, professor_dict[key]
 
